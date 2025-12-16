@@ -7,8 +7,8 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from starlette import status
 
-from ..database import SessionLocal
-from ..model import Users
+from database import SessionLocal
+from model import Users
 from passlib.context import CryptContext
 from jose import jwt,JWTError
 from fastapi.templating import Jinja2Templates
@@ -29,7 +29,7 @@ def get_db():
         db.close()
 db_dependency = Annotated[Session,Depends(get_db)]
 
-templates = Jinja2Templates(directory="TodoApp/templates")
+templates = Jinja2Templates(directory="templates")
 
 ###  Pages  ###
 

@@ -20,8 +20,8 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade() -> None:
     # op.execute(" ALTER TABLE user ADD COLUMN Phone_number VARCHAR")
-    op.add_column('users',sa.Column('Phone_number',sa.String(),nullable=True))
+    op.add_column('users',sa.Column('phone_number',sa.String(),nullable=True))
 
 
 def downgrade() -> None:
-    op.drop_column('users','Phone_number')
+    op.drop_column('users','phone_number')
